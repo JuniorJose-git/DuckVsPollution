@@ -10,18 +10,9 @@ config_version=5
 
 [application]
 
-config/name="DuckVsPollution"
+config/name="New Game Project"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/gdterm/plugin.cfg")
 
 [rendering]
 
