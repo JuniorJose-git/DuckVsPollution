@@ -10,11 +10,16 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="DuckVsPollution"
+run/main_scene="uid://foj3cn1tb1i0"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=3.08
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
