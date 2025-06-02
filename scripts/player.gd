@@ -9,7 +9,7 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * SPEED
 	
 	if direction:
-		animation.play("run2")
+		animation.play("run")
 		if direction[0]:
 			animation.scale.x = round(direction[0])
 	else:
