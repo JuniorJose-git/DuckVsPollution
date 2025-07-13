@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://c68k4k52rmahq"]
+[gd_scene load_steps=19 format=3 uid="uid://c68k4k52rmahq"]
 
-[ext_resource type="Texture2D" uid="uid://bn2ww325vnepu" path="res://assets/ducky_spritesheet.png" id="1_glpr6"]
+[ext_resource type="Texture2D" uid="uid://bn2ww325vnepu" path="res://assets/pato/ducky_spritesheet.png" id="1_glpr6"]
 [ext_resource type="Script" uid="uid://dg8kabmtyflfn" path="res://scripts/player.gd" id="1_pjt0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjt0s"]
@@ -119,6 +119,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvpqy"]
+size = Vector2(22, 13)
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_pjt0s")
 
@@ -130,3 +133,8 @@ autoplay = "idle"
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2(1, 12.5)
+shape = SubResource("RectangleShape2D_mvpqy")

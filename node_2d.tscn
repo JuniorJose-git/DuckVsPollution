@@ -4,9 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c68k4k52rmahq" path="res://actors/player.tscn" id="1_wtcfe"]
 
 [node name="main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="World" parent="." instance=ExtResource("1_0e48y")]
 position = Vector2(0, -1)
 
 [node name="player" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(109, 56)
+position = Vector2(420, 192)
