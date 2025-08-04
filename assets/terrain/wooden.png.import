@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4ifvod7vubaa"
-path="res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"
+uid="uid://re2241ys01db"
+path="res://.godot/imported/wooden.png-5061642f22a0881f91f68c52fa171248.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/1.png"
-dest_files=["res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"]
+source_file="res://assets/terrain/wooden.png"
+dest_files=["res://.godot/imported/wooden.png-5061642f22a0881f91f68c52fa171248.ctex"]
 
 [params]
 

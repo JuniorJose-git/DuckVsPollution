@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4ifvod7vubaa"
-path="res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"
+uid="uid://b8xm6vdevbtpc"
+path="res://.godot/imported/Top down Garden Castle.png-f03059ee458e750471a22ab3af8622f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/1.png"
-dest_files=["res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"]
+source_file="res://assets/Top Down Garden Castle/Top down Garden Castle.png"
+dest_files=["res://.godot/imported/Top down Garden Castle.png-f03059ee458e750471a22ab3af8622f2.ctex"]
 
 [params]
 

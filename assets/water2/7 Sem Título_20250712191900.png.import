@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4ifvod7vubaa"
-path="res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"
+uid="uid://dtl2p4vu5lxqo"
+path="res://.godot/imported/7 Sem Título_20250712191900.png-ca33a2de002fb8bf17de40285848cda2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/1.png"
-dest_files=["res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"]
+source_file="res://assets/water2/7 Sem Título_20250712191900.png"
+dest_files=["res://.godot/imported/7 Sem Título_20250712191900.png-ca33a2de002fb8bf17de40285848cda2.ctex"]
 
 [params]
 

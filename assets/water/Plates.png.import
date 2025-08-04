@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4ifvod7vubaa"
-path="res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"
+uid="uid://dmgjcvn0ec0qp"
+path="res://.godot/imported/Plates.png-3c12581357eed1fa3f79be38a7350a3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/1.png"
-dest_files=["res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"]
+source_file="res://assets/water/Plates.png"
+dest_files=["res://.godot/imported/Plates.png-3c12581357eed1fa3f79be38a7350a3c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4ifvod7vubaa"
-path="res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"
+uid="uid://cbkjs3q6ky3vr"
+path="res://.godot/imported/Fence's copiar.png-2cc1a91661a0b4dc827c28ef7a136ef5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/1.png"
-dest_files=["res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex"]
+source_file="res://assets/water/Fence's copiar.png"
+dest_files=["res://.godot/imported/Fence's copiar.png-2cc1a91661a0b4dc827c28ef7a136ef5.ctex"]
 
 [params]
 
