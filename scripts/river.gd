@@ -9,4 +9,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$ParallaxBackground.scroll_offset = Vector2(0, 0)
-	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-1, 0)
+	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-1.5, 0)
