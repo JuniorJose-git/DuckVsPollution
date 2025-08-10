@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do31ca0sapgrx"
-path="res://.godot/imported/CATSPRITESHEET_Gray.png-6f1d188a2a11817ceaa2b84c3ac73a54.ctex"
+uid="uid://j3hqrs7c87a4"
+path="res://.godot/imported/cat_animation.png-a40ecc0ad0ddd891d1ef1be15578486e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CATSPRITESHEET_Gray.png"
-dest_files=["res://.godot/imported/CATSPRITESHEET_Gray.png-6f1d188a2a11817ceaa2b84c3ac73a54.ctex"]
+source_file="res://assets/rpg/cat_animation.png"
+dest_files=["res://.godot/imported/cat_animation.png-a40ecc0ad0ddd891d1ef1be15578486e.ctex"]
 
 [params]
 

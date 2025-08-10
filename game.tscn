@@ -8,10 +8,10 @@
 y_sort_enabled = true
 
 [node name="world" parent="." instance=ExtResource("1_0e48y")]
-position = Vector2(0, -1)
+position = Vector2(15, 593)
 
 [node name="player" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(383, 194)
+position = Vector2(900, 983)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
