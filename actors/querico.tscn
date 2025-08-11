@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://beq5ggs7gawrq"]
 
-[ext_resource type="Script" uid="uid://bwq7pyncfqm64" path="res://scripts/querico.gd" id="1_47675"]
+[ext_resource type="Script" uid="uid://bwq7pyncfqm64" path="res://scripts/actors/querico.gd" id="1_47675"]
 [ext_resource type="Texture2D" uid="uid://bl84c5p4brfdg" path="res://assets/actors/querico/quercio.png" id="1_g27fj"]
 
 [sub_resource type="Animation" id="Animation_47675"]

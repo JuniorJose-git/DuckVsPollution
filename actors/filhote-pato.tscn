@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfa46m7opo21o"]
 
-[ext_resource type="Script" uid="uid://2xqapnahf17o" path="res://scripts/filhote_pato.gd" id="1_rqxa2"]
+[ext_resource type="Script" uid="uid://2xqapnahf17o" path="res://scripts/actors/filhote_pato.gd" id="1_rqxa2"]
 [ext_resource type="Texture2D" uid="uid://b5ffyqjtctvgi" path="res://assets/actors/filhote-pato/filhote_pato.png" id="2_alful"]
 
 [sub_resource type="Animation" id="Animation_4e32r"]

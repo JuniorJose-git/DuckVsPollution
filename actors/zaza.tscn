@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1fioye5wtqb3"]
 
-[ext_resource type="Script" uid="uid://dlvap5x75gwly" path="res://scripts/zaza.gd" id="1_aaosj"]
+[ext_resource type="Script" uid="uid://dlvap5x75gwly" path="res://scripts/actors/zaza.gd" id="1_aaosj"]
 [ext_resource type="Texture2D" uid="uid://o7xdn56y5ogy" path="res://assets/actors/zaza/zaza.png" id="1_qrl7j"]
 
 [sub_resource type="Animation" id="Animation_pgyuo"]
