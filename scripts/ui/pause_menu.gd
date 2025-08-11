@@ -1,5 +1,5 @@
-extends Control
-@onready var pauseMenu: Control = $"."
+extends CanvasLayer
+@onready var pauseMenu: Control = $"Control"
 @onready var tree: SceneTree = get_tree()
 
 # Called when the node enters the scene tree for the first time.
