@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://beq5ggs7gawrq"]
+
+[ext_resource type="Script" uid="uid://bwq7pyncfqm64" path="res://scripts/querico.gd" id="1_47675"]
+[ext_resource type="Texture2D" uid="uid://bl84c5p4brfdg" path="res://assets/actors/querico/quercio.png" id="1_g27fj"]
+
+[sub_resource type="Animation" id="Animation_47675"]
+resource_name = "idle"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g772m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m1smr"]
+_data = {
+&"RESET": SubResource("Animation_g772m"),
+&"idle": SubResource("Animation_47675")
+}
+
+[node name="Querico" type="CharacterBody2D"]
+script = ExtResource("1_47675")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m1smr")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g27fj")
+hframes = 4

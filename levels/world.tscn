@@ -1,12 +1,12 @@
 [gd_scene load_steps=28 format=4 uid="uid://ckeewn5x4aewe"]
 
-[ext_resource type="Texture2D" uid="uid://crewn6yd3atxc" path="res://assets/terrain/grass.png" id="2_687qm"]
-[ext_resource type="Texture2D" uid="uid://0mji2dly37g2" path="res://assets/terrain/plains.png" id="3_lmpr0"]
-[ext_resource type="Texture2D" uid="uid://2xtklv8306fi" path="res://assets/water2/7 Sem Título_20250712194316.png" id="4_re8x6"]
-[ext_resource type="Texture2D" uid="uid://b6kwglc4sf0ik" path="res://assets/rpg/Trees_animation.png" id="5_wqmfy"]
-[ext_resource type="Texture2D" uid="uid://cfysmqb2xwp02" path="res://assets/rpg/exterior.png" id="6_mla2a"]
-[ext_resource type="Texture2D" uid="uid://8e68b2euf3jp" path="res://assets/pato/Adobe Express - file.png" id="7_oxfhy"]
-[ext_resource type="Texture2D" uid="uid://c8fl6ixn0sfk4" path="res://assets/water2/48x48.png" id="8_54i5j"]
+[ext_resource type="Texture2D" uid="uid://crewn6yd3atxc" path="res://assets/extern/terrain/grass.png" id="2_687qm"]
+[ext_resource type="Texture2D" uid="uid://0mji2dly37g2" path="res://assets/extern/terrain/plains.png" id="3_lmpr0"]
+[ext_resource type="Texture2D" uid="uid://2xtklv8306fi" path="res://assets/extern/water2/7 Sem Título_20250712194316.png" id="4_re8x6"]
+[ext_resource type="Texture2D" uid="uid://b6kwglc4sf0ik" path="res://assets/extern/rpg/Trees_animation.png" id="5_wqmfy"]
+[ext_resource type="Texture2D" uid="uid://cfysmqb2xwp02" path="res://assets/extern/rpg/exterior.png" id="6_mla2a"]
+[ext_resource type="Texture2D" uid="uid://8e68b2euf3jp" path="res://assets/extern/Adobe Express - file.png" id="7_oxfhy"]
+[ext_resource type="Texture2D" uid="uid://c8fl6ixn0sfk4" path="res://assets/extern/water2/48x48.png" id="8_54i5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vons5"]
 texture = ExtResource("2_687qm")

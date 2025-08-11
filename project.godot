@@ -23,7 +23,6 @@ window/stretch/aspect="expand"
 
 [gui]
 
-fonts/dynamic_fonts/use_oversampling=false
 theme/custom="uid://7wvgexraot6g"
 
 [input]

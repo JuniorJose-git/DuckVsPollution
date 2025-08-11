@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=4 uid="uid://bjhgrku6molgv"]
 
-[ext_resource type="Texture2D" uid="uid://b06suqy6333l7" path="res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="1_73gwi"]
+[ext_resource type="Texture2D" uid="uid://b06suqy6333l7" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="1_73gwi"]
 [ext_resource type="Script" uid="uid://beuq77voy43kw" path="res://scripts/river.gd" id="1_qny2x"]
 [ext_resource type="PackedScene" uid="uid://drvpay50cuaad" path="res://actors/player_river.tscn" id="1_xvnfm"]
-[ext_resource type="Texture2D" uid="uid://cycbg2p30lqmu" path="res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="2_ism3p"]
-[ext_resource type="Texture2D" uid="uid://c85hho28wspqc" path="res://assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="3_amxmn"]
-[ext_resource type="Texture2D" uid="uid://4v4fisvl31cm" path="res://assets/lixo_2.png" id="5_5v3ow"]
+[ext_resource type="Texture2D" uid="uid://cycbg2p30lqmu" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="2_ism3p"]
+[ext_resource type="Texture2D" uid="uid://c85hho28wspqc" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="3_amxmn"]
+[ext_resource type="Texture2D" uid="uid://4v4fisvl31cm" path="res://assets/garbage/lixo_2.png" id="5_5v3ow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ism3p"]
 texture = ExtResource("1_73gwi")

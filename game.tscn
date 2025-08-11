@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://foj3cn1tb1i0"]
+[gd_scene load_steps=9 format=3 uid="uid://foj3cn1tb1i0"]
 
 [ext_resource type="PackedScene" uid="uid://ckeewn5x4aewe" path="res://levels/world.tscn" id="1_0e48y"]
 [ext_resource type="PackedScene" uid="uid://c68k4k52rmahq" path="res://actors/player.tscn" id="1_wtcfe"]
-[ext_resource type="PackedScene" uid="uid://b2axeeeams74d" path="res://pause_menu.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://b2axeeeams74d" path="res://ui/pause_menu.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://c1fioye5wtqb3" path="res://actors/zaza.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://dfa46m7opo21o" path="res://actors/filhote-pato.tscn" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://bafbd0ybv2sjl" path="res://actors/tico.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://beq5ggs7gawrq" path="res://actors/querico.tscn" id="7_eow3j"]
+[ext_resource type="PackedScene" uid="uid://vbel0io52kxt" path="res://ui/textbox.tscn" id="8_j5wjh"]
 
 [node name="game" type="Node2D"]
 y_sort_enabled = true
@@ -11,7 +16,25 @@ y_sort_enabled = true
 position = Vector2(15, 593)
 
 [node name="player" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(900, 983)
+position = Vector2(579, 914)
+
+[node name="Zaza" parent="." instance=ExtResource("4_fc0e3")]
+position = Vector2(418, 856)
+
+[node name="Filhote-pato" parent="." instance=ExtResource("5_7jktm")]
+position = Vector2(429, 861)
+
+[node name="Filhote-pato2" parent="." instance=ExtResource("5_7jktm")]
+position = Vector2(408, 854)
+
+[node name="Tico" parent="." instance=ExtResource("6_ryrav")]
+position = Vector2(283, 884)
+
+[node name="Querico" parent="." instance=ExtResource("7_eow3j")]
+position = Vector2(351, 856)
+scale = Vector2(-1, 1)
+
+[node name="Textbox" parent="." instance=ExtResource("8_j5wjh")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

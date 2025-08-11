@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c68k4k52rmahq"]
+[gd_scene load_steps=13 format=3 uid="uid://c68k4k52rmahq"]
 
 [ext_resource type="Script" uid="uid://dg8kabmtyflfn" path="res://scripts/player.gd" id="1_pjt0s"]
-[ext_resource type="Texture2D" uid="uid://tiq4i7ur7ivm" path="res://assets/ducky/docky.png" id="2_mvpqy"]
+[ext_resource type="Texture2D" uid="uid://tiq4i7ur7ivm" path="res://assets/actors/ducky/ducky.png" id="2_mvpqy"]
 
 [sub_resource type="Animation" id="Animation_tue77"]
 length = 0.001
@@ -20,7 +20,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_1yqc4"]
 resource_name = "down"
-length = 0.4
+length = 0.8
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -29,10 +29,27 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2i(1, 0)]
+"values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_ua707"]
+resource_name = "idleDown"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 8), Vector2i(1, 8), Vector2i(2, 8), Vector2i(3, 8)]
 }
 
 [sub_resource type="Animation" id="Animation_33vod"]
@@ -67,6 +84,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_e7yfm"]
+resource_name = "idleUp"
+length = 0.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 7), Vector2i(1, 7)]
 }
 
 [sub_resource type="Animation" id="Animation_kjkj0"]
@@ -105,7 +139,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_mvpqy"]
 resource_name = "up"
-length = 0.4
+length = 0.8
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -114,18 +148,20 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2i(4, 0)]
+"values": [Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_33vod"]
 _data = {
 &"RESET": SubResource("Animation_tue77"),
 &"down": SubResource("Animation_1yqc4"),
+&"idleDown": SubResource("Animation_ua707"),
 &"idleLeft": SubResource("Animation_33vod"),
 &"idleRight": SubResource("Animation_er1rk"),
+&"idleUp": SubResource("Animation_e7yfm"),
 &"left": SubResource("Animation_kjkj0"),
 &"right": SubResource("Animation_esgq3"),
 &"up": SubResource("Animation_mvpqy")
@@ -146,4 +182,4 @@ libraries = {
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_mvpqy")
 hframes = 6
-vframes = 7
+vframes = 9

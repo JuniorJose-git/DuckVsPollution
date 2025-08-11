@@ -9,10 +9,15 @@ var lastDirection = 'left'
 func updateAnimation(): 
 	var direction
 	
-	if lastDirection == 'left':
-		direction = "idleLeft"
-	else:
-		direction = "idleRight"
+	match lastDirection:
+		'left':
+			direction = "idleLeft"
+		'right':
+			direction = "idleRight"
+		'up':
+			direction = "idleUp"
+		'down':
+			direction = "idleDown"
 		
 	if velocity.x < 0: 
 		direction = "left"
@@ -22,8 +27,10 @@ func updateAnimation():
 		lastDirection = direction
 	elif velocity.y < 0: 
 		direction = "up"
+		lastDirection = direction
 	elif velocity.y > 0: 
 		direction = "down"
+		lastDirection = direction
 	
 	animation.play(direction)
 	
