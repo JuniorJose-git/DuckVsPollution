@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6flasa0kvw20"
-path="res://.godot/imported/tico.png-70918581d86abf3effa8b8cebdb84bd8.ctex"
+uid="uid://bw2jgtfjbd8up"
+path="res://.godot/imported/ducky_nadando.png-20c5b6f9e42d0a6ae9a4d12a1bcdee59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/actors/tico/tico.png"
-dest_files=["res://.godot/imported/tico.png-70918581d86abf3effa8b8cebdb84bd8.ctex"]
+source_file="res://assets/actors/ducky/ducky_nadando.png"
+dest_files=["res://.godot/imported/ducky_nadando.png-20c5b6f9e42d0a6ae9a4d12a1bcdee59.ctex"]
 
 [params]
 

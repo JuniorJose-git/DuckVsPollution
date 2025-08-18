@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gg54fdaaaqd6"
-path="res://.godot/imported/titulo.png-5a5b186fc91462861d01437e186ab6ab.ctex"
+uid="uid://c05mfgi7mlphe"
+path="res://.godot/imported/castanha.png-89adb7e57a524f2ac4cef3caef1b83af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/extern/Ninja Adventure - Asset Pack/titulo.png"
-dest_files=["res://.godot/imported/titulo.png-5a5b186fc91462861d01437e186ab6ab.ctex"]
+source_file="res://assets/castanha/castanha.png"
+dest_files=["res://.godot/imported/castanha.png-89adb7e57a524f2ac4cef3caef1b83af.ctex"]
 
 [params]
 

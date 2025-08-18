@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6flasa0kvw20"
-path="res://.godot/imported/tico.png-70918581d86abf3effa8b8cebdb84bd8.ctex"
+uid="uid://bi1xubk2u0kjx"
+path="res://.godot/imported/filhote_pato_pulando.png-cd3cc1f35f77f1540aed2ab0a27c6acb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/actors/tico/tico.png"
-dest_files=["res://.godot/imported/tico.png-70918581d86abf3effa8b8cebdb84bd8.ctex"]
+source_file="res://assets/actors/filhote-pato/filhote_pato_pulando.png"
+dest_files=["res://.godot/imported/filhote_pato_pulando.png-cd3cc1f35f77f1540aed2ab0a27c6acb.ctex"]
 
 [params]
 

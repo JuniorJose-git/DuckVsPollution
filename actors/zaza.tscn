@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1fioye5wtqb3"]
+[gd_scene load_steps=9 format=3 uid="uid://c1fioye5wtqb3"]
 
 [ext_resource type="Script" uid="uid://dlvap5x75gwly" path="res://scripts/actors/zaza.gd" id="1_aaosj"]
 [ext_resource type="Texture2D" uid="uid://o7xdn56y5ogy" path="res://assets/actors/zaza/zaza.png" id="1_qrl7j"]
+[ext_resource type="Script" uid="uid://c0tvgiu60xnkt" path="res://scripts/actors/zaza_texbox.gd" id="3_oxcgm"]
+[ext_resource type="PackedScene" uid="uid://vbel0io52kxt" path="res://ui/textbox.tscn" id="3_pgyuo"]
 
 [sub_resource type="Animation" id="Animation_pgyuo"]
 length = 0.001
@@ -41,6 +43,9 @@ _data = {
 &"idle": SubResource("Animation_aaosj")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaosj"]
+size = Vector2(80, 52)
+
 [node name="Zaza" type="CharacterBody2D"]
 script = ExtResource("1_aaosj")
 
@@ -52,3 +57,16 @@ libraries = {
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qrl7j")
 hframes = 4
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 10
+z_as_relative = false
+collision_layer = 3
+collision_mask = 18
+script = ExtResource("3_oxcgm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_aaosj")
+
+[node name="Textbox" parent="." instance=ExtResource("3_pgyuo")]
+d_file = "res://dialogue/zaza.json"

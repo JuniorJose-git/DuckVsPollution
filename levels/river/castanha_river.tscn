@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://bt872fgkvgsj5"]
+
+[ext_resource type="Texture2D" uid="uid://c2pt16ren3k5q" path="res://assets/castanha/castanha_river.png" id="1_j7dcv"]
+[ext_resource type="Script" uid="uid://bprhtekhywf0g" path="res://scripts/levels/river/castanha_river.gd" id="1_sk60q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk60q"]
+atlas = ExtResource("1_j7dcv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya8y8"]
+atlas = ExtResource("1_j7dcv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg053"]
+atlas = ExtResource("1_j7dcv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vca7v"]
+atlas = ExtResource("1_j7dcv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wt105"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk60q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya8y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg053")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vca7v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sk60q"]
+radius = 16.4924
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fg053"]
+radius = 18.4391
+
+[node name="CastanhaRiver" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_sk60q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.00347, 1.00929)
+sprite_frames = SubResource("SpriteFrames_wt105")
+autoplay = "default"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sk60q")
+
+[node name="PlayerArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+shape = SubResource("CircleShape2D_fg053")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]

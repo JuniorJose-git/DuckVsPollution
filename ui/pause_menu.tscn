@@ -51,6 +51,7 @@ layout_mode = 2
 text = "Retornar"
 
 [node name="settings" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Configurações"
 

@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 75
 @onready var animation := $AnimationPlayer 
-
 var lastDirection = 'left'
 
 func updateAnimation(): 
@@ -37,6 +36,6 @@ func updateAnimation():
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right","ui_up","ui_down")
 	velocity = direction * SPEED
-	
+
 	updateAnimation()
 	move_and_slide()

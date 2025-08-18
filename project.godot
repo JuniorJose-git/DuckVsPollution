@@ -14,6 +14,10 @@ config/name="DuckVsPollution"
 run/main_scene="uid://ddoicia5wugau"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[autoload]
+
+LevelCore="*res://scripts/levels/level_core.gd"
+
 [display]
 
 window/size/viewport_width=640

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6flasa0kvw20"
-path="res://.godot/imported/tico.png-70918581d86abf3effa8b8cebdb84bd8.ctex"
+uid="uid://c2pt16ren3k5q"
+path="res://.godot/imported/castanha_river.png-2f5260dcf9a5d44bdf2a90098b74f0be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/actors/tico/tico.png"
-dest_files=["res://.godot/imported/tico.png-70918581d86abf3effa8b8cebdb84bd8.ctex"]
+source_file="res://assets/castanha/castanha_river.png"
+dest_files=["res://.godot/imported/castanha_river.png-2f5260dcf9a5d44bdf2a90098b74f0be.ctex"]
 
 [params]
 
