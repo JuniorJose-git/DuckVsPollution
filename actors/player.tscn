@@ -1,11 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://c68k4k52rmahq"]
+[gd_scene load_steps=33 format=3 uid="uid://c68k4k52rmahq"]
 
 [ext_resource type="Script" uid="uid://dg8kabmtyflfn" path="res://scripts/actors/player.gd" id="1_pjt0s"]
 [ext_resource type="Texture2D" uid="uid://tiq4i7ur7ivm" path="res://assets/actors/ducky/ducky.png" id="2_mvpqy"]
 [ext_resource type="PackedScene" uid="uid://ced5pnptytnml" path="res://ui/help_textbox.tscn" id="3_1yqc4"]
 [ext_resource type="Script" uid="uid://yjqsv2bdu3in" path="res://scripts/actors/player_help_textbox.gd" id="4_esgq3"]
 [ext_resource type="FontFile" uid="uid://ddmipjgckb4xp" path="res://assets/ui/font/ChiKareGo2.ttf" id="5_kjkj0"]
-[ext_resource type="Texture2D" uid="uid://c05mfgi7mlphe" path="res://assets/castanha/castanha.png" id="6_tue77"]
+[ext_resource type="Texture2D" uid="uid://c05mfgi7mlphe" path="res://assets/castanha/castanha.png" id="6_er1rk"]
+[ext_resource type="Texture2D" uid="uid://cowr8ue3mavnn" path="res://assets/ui/borda.png" id="8_e7yfm"]
+[ext_resource type="Texture2D" uid="uid://bfd6jo8abdlqa" path="res://assets/ui/quadro-pato.png" id="8_er1rk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_esgq3"]
 
@@ -176,31 +178,79 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_mvpqy"]
 radius = 10.0499
 
-[sub_resource type="LabelSettings" id="LabelSettings_tue77"]
-font = ExtResource("5_kjkj0")
-font_size = 32
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ua707"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_33vod"]
-atlas = ExtResource("6_tue77")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek1fv"]
+atlas = ExtResource("8_er1rk")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_er1rk"]
-atlas = ExtResource("6_tue77")
+[sub_resource type="AtlasTexture" id="AtlasTexture_updx0"]
+atlas = ExtResource("8_er1rk")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e7yfm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujdn1"]
+atlas = ExtResource("8_er1rk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jriy2"]
+atlas = ExtResource("8_er1rk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkwqa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_33vod")
+"texture": SubResource("AtlasTexture_ek1fv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_er1rk")
+"texture": SubResource("AtlasTexture_updx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujdn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jriy2")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41w2c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj7ed"]
+atlas = ExtResource("6_er1rk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whcuh"]
+atlas = ExtResource("6_er1rk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nkr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj7ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whcuh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_31m4k"]
+font = ExtResource("5_kjkj0")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opp7g"]
+texture = ExtResource("8_e7yfm")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 17
@@ -240,27 +290,56 @@ shape = SubResource("CircleShape2D_mvpqy")
 
 [node name="Control" type="Control" parent="Stats"]
 layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
+anchors_preset = 0
+offset_right = 40.0
 offset_bottom = 40.0
-grow_horizontal = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="Stats/Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 32.0
+offset_bottom = 32.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Stats/Control/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Stats/Control/MarginContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ua707")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer/Panel"]
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_rkwqa")
+autoplay = "default"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Panel" type="Panel" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_41w2c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Panel"]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5nkr1")
+
+[node name="coins" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_tue77")
+label_settings = SubResource("LabelSettings_31m4k")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer"]
-position = Vector2(-25.5, 20.5)
-scale = Vector2(0.90625, 0.90625)
-sprite_frames = SubResource("SpriteFrames_e7yfm")
+[node name="Separador" type="Panel" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_opp7g")

@@ -46,6 +46,7 @@ radius = 16.4924
 radius = 18.4391
 
 [node name="CastanhaRiver" type="RigidBody2D"]
+scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
@@ -68,5 +69,9 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 shape = SubResource("CircleShape2D_fg053")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

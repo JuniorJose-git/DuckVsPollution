@@ -58,7 +58,7 @@ z_index = -1
 position = Vector2(15, 593)
 
 [node name="player" parent="." instance=ExtResource("2_4u4fy")]
-position = Vector2(547, 905)
+position = Vector2(606, 911)
 
 [node name="Zaza" parent="." instance=ExtResource("3_j015t")]
 position = Vector2(456, 853)

@@ -1,7 +1,10 @@
-extends RigidBody2D
-var speed: float = 5 * 0.4
-var coins = 0
-@onready var label = $Stats/Control/MarginContainer/HBoxContainer/Label
+extends CharacterBody2D
+@onready var label = %coins
+@onready var healthBar = %HealthBar
+var speed := 75
+var coins := 0
+var health := 5
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,12 +13,23 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	label.text = str(coins)
 	
-	if (coins >= 15):
+	if (coins >= 10):
 		LevelCore.river.level_1_completed = true
 		get_tree().change_scene_to_file("res://main/game.tscn")
 	
-	if Input.is_action_pressed("ui_up"):
-		$".".apply_central_impulse(Vector2(0, -mass * speed))
+	var direction = Input.get_vector("ui_left", "ui_right","ui_up","ui_down")
 	
-	if Input.is_action_pressed("ui_down"):
-		$".".apply_central_impulse(Vector2(0, mass * speed))
+	if Input.is_action_pressed("ui_left"):
+		velocity = direction * speed * 2 
+	else:
+		velocity = direction * speed
+	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	
+	if health > 0:
+		health -= 1
+	
+	healthBar.value = health
+	

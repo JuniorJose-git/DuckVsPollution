@@ -1,14 +1,20 @@
 extends Node2D
 @export var coin_scene: PackedScene
-
+@onready var game_over := $GameOver
+@onready var tree := get_tree()
+@onready var parallax_background = $ParallaxBackground
+@onready var parallax_layer = $ParallaxBackground/ParallaxLayer
 # Called when the node enters the scene tree for the first time.
+
+var speed = 1;
+
 func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$ParallaxBackground.scroll_offset = Vector2(0, 0)
-	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-1, 0)
+	parallax_background.scroll_offset = Vector2(0, 0)
+	parallax_layer.motion_offset += Vector2(-0.425 * speed, 0)
 
 func check_for_body_at_point_2d(point: Vector2) -> Array:
 	var space_state = get_world_2d().direct_space_state
@@ -21,10 +27,22 @@ func check_for_body_at_point_2d(point: Vector2) -> Array:
 func _on_timer_timeout() -> void:
 	if check_for_body_at_point_2d(position).size() > 0:
 		var coin = coin_scene.instantiate()
+		coin.set_speed(speed)
 		add_child(coin)
 		var position = Vector2(640 + 32, randf_range(60, 320 - 50))
 		coin.position = position
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body)
+	game_over.show()
+	tree.paused = true
+
+func _on_game_over_play_again_pressed() -> void:
+	tree.change_scene_to_file("res://levels/river/river_level_1.tscn")
+	tree.paused = false
+
+func _on_game_over_exit_pressed() -> void:
+	tree.change_scene_to_file("res://main/game.tscn")
+	tree.paused = false
+
+func _on_speed_timer_timeout() -> void:
+	if speed <= 4: speed += 0.1
