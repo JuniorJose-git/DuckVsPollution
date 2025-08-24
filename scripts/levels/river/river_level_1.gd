@@ -4,6 +4,7 @@ extends Node2D
 @onready var tree := get_tree()
 @onready var parallax_background = $ParallaxBackground
 @onready var parallax_layer = $ParallaxBackground/ParallaxLayer
+@onready var player = %PlayerRiver
 # Called when the node enters the scene tree for the first time.
 
 var speed = 1;
@@ -13,8 +14,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	parallax_background.scroll_offset = Vector2(0, 0)
-	parallax_layer.motion_offset += Vector2(-0.425 * speed, 0)
+	$ParallaxBackground.scroll_offset = Vector2(0, 0)
+	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-0.425 * speed, 0)
+	
+	if player.health <= 0:
+		game_over.show()
+		tree.paused = true
 
 func check_for_body_at_point_2d(point: Vector2) -> Array:
 	var space_state = get_world_2d().direct_space_state
@@ -29,8 +34,7 @@ func _on_timer_timeout() -> void:
 		var coin = coin_scene.instantiate()
 		coin.set_speed(speed)
 		add_child(coin)
-		var position = Vector2(640 + 32, randf_range(60, 320 - 50))
-		coin.position = position
+		coin.position = Vector2(640 + 32, randf_range(60, 320 - 50))
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	game_over.show()
