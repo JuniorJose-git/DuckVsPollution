@@ -9,7 +9,8 @@ extends CanvasLayer
 var dialogue = []
 var current_dialogue_id = 0
 var dialogue_active = false
- 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	textbox.hide()

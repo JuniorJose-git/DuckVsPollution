@@ -44,7 +44,7 @@ func _on_level_1_pressed() -> void:
 
 func _on_level_2_pressed() -> void:
 	if LevelCore.river.level_1_completed:
-		get_tree().change_scene_to_file("res://levels/river/river_level_1.tscn")
+		get_tree().change_scene_to_file("res://levels/river/river_level_2.tscn")
 
 func _on_level_3_pressed() -> void:
 	if LevelCore.river.level_2_completed:

@@ -5,6 +5,9 @@ const SPEED = 75
 @onready var animation := $AnimationPlayer 
 var lastDirection = 'left'
 
+func _ready() -> void:
+	LevelCore.river.level_1_first_play = true
+
 func updateAnimation(): 
 	var direction
 	

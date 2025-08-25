@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c68k4k52rmahq"]
+[gd_scene load_steps=41 format=3 uid="uid://c68k4k52rmahq"]
 
 [ext_resource type="Script" uid="uid://dg8kabmtyflfn" path="res://scripts/actors/player.gd" id="1_pjt0s"]
 [ext_resource type="Texture2D" uid="uid://tiq4i7ur7ivm" path="res://assets/actors/ducky/ducky.png" id="2_mvpqy"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c05mfgi7mlphe" path="res://assets/castanha/castanha.png" id="6_er1rk"]
 [ext_resource type="Texture2D" uid="uid://cowr8ue3mavnn" path="res://assets/ui/borda.png" id="8_e7yfm"]
 [ext_resource type="Texture2D" uid="uid://bfd6jo8abdlqa" path="res://assets/ui/quadro-pato.png" id="8_er1rk"]
+[ext_resource type="Texture2D" uid="uid://bdm40imtxq7on" path="res://assets/lata/lata.png" id="8_ua707"]
+[ext_resource type="Texture2D" uid="uid://d1x0i1pj4g3g5" path="res://assets/garrafa-agua/garrafa_agua.png" id="9_ua707"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_esgq3"]
 
@@ -245,6 +247,50 @@ font = ExtResource("5_kjkj0")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkwqa"]
+atlas = ExtResource("8_ua707")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41w2c"]
+atlas = ExtResource("8_ua707")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_31m4k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkwqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41w2c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nkr1"]
+atlas = ExtResource("9_ua707")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31m4k"]
+atlas = ExtResource("9_ua707")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opp7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nkr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31m4k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opp7g"]
 texture = ExtResource("8_e7yfm")
 texture_margin_left = 1.0
@@ -334,6 +380,36 @@ sprite_frames = SubResource("SpriteFrames_5nkr1")
 
 [node name="coins" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_31m4k")
+
+[node name="Panel2" type="Panel" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_41w2c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Panel2"]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_31m4k")
+
+[node name="cans" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_31m4k")
+
+[node name="Panel3" type="Panel" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_41w2c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Panel3"]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_opp7g")
+
+[node name="water" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_31m4k")

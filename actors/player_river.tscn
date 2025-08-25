@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://drvpay50cuaad"]
+[gd_scene load_steps=38 format=3 uid="uid://drvpay50cuaad"]
 
 [ext_resource type="Script" uid="uid://og4aw48ekyod" path="res://scripts/actors/player_river.gd" id="1_3s7jk"]
 [ext_resource type="Texture2D" uid="uid://bw2jgtfjbd8up" path="res://assets/actors/ducky/ducky_nadando.png" id="2_3s7jk"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bfd6jo8abdlqa" path="res://assets/ui/quadro-pato.png" id="5_fbyap"]
 [ext_resource type="Texture2D" uid="uid://c05mfgi7mlphe" path="res://assets/castanha/castanha.png" id="6_ek1fv"]
 [ext_resource type="Texture2D" uid="uid://cowr8ue3mavnn" path="res://assets/ui/borda.png" id="6_qx8cs"]
+[ext_resource type="Texture2D" uid="uid://bdm40imtxq7on" path="res://assets/lata/lata.png" id="6_ujdn1"]
+[ext_resource type="Texture2D" uid="uid://d1x0i1pj4g3g5" path="res://assets/garrafa-agua/garrafa_agua.png" id="7_jriy2"]
 [ext_resource type="Texture2D" uid="uid://5ptl2ii71sy2" path="res://assets/ui/borda-vida.png" id="8_updx0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1dgt"]
@@ -116,6 +118,57 @@ font = ExtResource("3_ct4wv")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nj7ed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkwqa"]
+atlas = ExtResource("6_ujdn1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41w2c"]
+atlas = ExtResource("6_ujdn1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whcuh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkwqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41w2c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lia5t"]
+font = ExtResource("3_ct4wv")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nkr1"]
+atlas = ExtResource("7_jriy2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31m4k"]
+atlas = ExtResource("7_jriy2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d334w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nkr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31m4k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_updx0"]
 texture = ExtResource("6_qx8cs")
 texture_margin_left = 1.0
@@ -204,6 +257,36 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_ek1fv")
+
+[node name="Panel2" type="Panel" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nj7ed")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Panel2"]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_whcuh")
+
+[node name="cans" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_lia5t")
+
+[node name="Panel3" type="Panel" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nj7ed")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Panel3"]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_d334w")
+
+[node name="water" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_lia5t")
 
 [node name="Separador" type="Panel" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 4)

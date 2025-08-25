@@ -13,10 +13,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	label.text = str(coins)
 	
-	if (coins >= 10):
-		LevelCore.river.level_1_completed = true
-		get_tree().change_scene_to_file("res://main/game.tscn")
-	
 	var direction = Input.get_vector("ui_left", "ui_right","ui_up","ui_down")
 	
 	if Input.is_action_pressed("ui_left"):
@@ -27,9 +23,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	
 	if health > 0:
 		health -= 1
-	
 	healthBar.value = health
 	
