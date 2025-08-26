@@ -1,11 +1,13 @@
-[gd_scene load_steps=29 format=4 uid="uid://bjhgrku6molgv"]
+[gd_scene load_steps=31 format=4 uid="uid://bjhgrku6molgv"]
 
 [ext_resource type="Texture2D" uid="uid://b06suqy6333l7" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="1_73gwi"]
 [ext_resource type="Script" uid="uid://beuq77voy43kw" path="res://scripts/levels/river/river_level_1.gd" id="1_qny2x"]
 [ext_resource type="PackedScene" uid="uid://drvpay50cuaad" path="res://actors/player_river.tscn" id="1_xvnfm"]
 [ext_resource type="Texture2D" uid="uid://cycbg2p30lqmu" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="2_ism3p"]
 [ext_resource type="Texture2D" uid="uid://c85hho28wspqc" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="3_amxmn"]
+[ext_resource type="PackedScene" uid="uid://dqdamp5wmbqxo" path="res://levels/river/lata_river.tscn" id="3_vdqrx"]
 [ext_resource type="Texture2D" uid="uid://rmfeln1whg1c" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="4_mjwg2"]
+[ext_resource type="PackedScene" uid="uid://dn1355bf5vrr3" path="res://levels/river/waterbottle.tscn" id="4_u7tpt"]
 [ext_resource type="Texture2D" uid="uid://4v4fisvl31cm" path="res://assets/garbage/lixo_2.png" id="5_5v3ow"]
 [ext_resource type="Texture2D" uid="uid://bjaok1bqtq4bg" path="res://assets/tonel-toxico/tonel_toxico_boiando.png" id="7_fr1cc"]
 [ext_resource type="PackedScene" uid="uid://bt872fgkvgsj5" path="res://levels/river/castanha_river.tscn" id="7_y0frx"]
@@ -353,6 +355,8 @@ texture_margin_bottom = 1.0
 y_sort_enabled = true
 script = ExtResource("1_qny2x")
 coin_scene = ExtResource("7_y0frx")
+can_scene = ExtResource("3_vdqrx")
+waterbottle_scene = ExtResource("4_u7tpt")
 
 [node name="PlayerRiver" parent="." instance=ExtResource("1_xvnfm")]
 unique_name_in_owner = true
@@ -402,11 +406,19 @@ position = Vector2(676, 177.5)
 shape = SubResource("RectangleShape2D_5urue")
 
 [node name="SpeedTimer" type="Timer" parent="."]
+wait_time = 2.4
 autostart = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="CoinsTimer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 2.4
+autostart = true
+
+[node name="CanTimer" type="Timer" parent="."]
+wait_time = 2.4
+autostart = true
+
+[node name="WaterTimer" type="Timer" parent="."]
 autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="."]
@@ -553,7 +565,9 @@ theme_override_font_sizes/font_size = 20
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CoinsTimer" to="." method="_on_coins_timer_timeout"]
+[connection signal="timeout" from="CanTimer" to="." method="_on_can_timer_timeout"]
+[connection signal="timeout" from="WaterTimer" to="." method="_on_water_timer_timeout"]
 [connection signal="pressed" from="GameOver/Control/VBoxContainer/GameOverPlayAgain" to="." method="_on_game_over_play_again_pressed"]
 [connection signal="pressed" from="GameOver/Control/VBoxContainer/GameOverExit" to="." method="_on_game_over_exit_pressed"]
 [connection signal="pressed" from="GameCompleted/Control/MarginContainer/VBoxContainer/GameCompletedContinue" to="." method="_on_game_completed_continue_pressed"]

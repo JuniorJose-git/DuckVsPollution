@@ -1,5 +1,8 @@
 extends Node2D
 @export var coin_scene: PackedScene
+@export var can_scene: PackedScene
+@export var waterbottle_scene: PackedScene
+
 @onready var game_over := $GameOver
 @onready var tree := get_tree()
 @onready var parallax_background = $ParallaxBackground
@@ -53,12 +56,28 @@ func check_for_body_at_point_2d(point: Vector2) -> Array:
 	query.collide_with_bodies = true # Set to true if you want to detect physics bodies (RigidBody2D, KinematicBody2D, StaticBody2D)
 	return space_state.intersect_point(query) # Returns true if any object is found at the point
 
-func _on_timer_timeout() -> void:
+func _on_coins_timer_timeout() -> void:
 	if check_for_body_at_point_2d(position).size() > 0:
 		var coin = coin_scene.instantiate()
 		coin.set_speed(speed)
 		add_child(coin)
 		coin.position = Vector2(640 + 32, randf_range(60, 320 - 50))
+		
+func _on_can_timer_timeout() -> void:
+	if check_for_body_at_point_2d(position).size() > 0:
+		var can = can_scene.instantiate()
+		can.set_speed(speed)
+		add_child(can)
+		can.position = Vector2(640 + 32, randf_range(60, 320 - 50))
+		
+
+func _on_water_timer_timeout() -> void:
+	if check_for_body_at_point_2d(position).size() > 0:
+		var waterbottle = waterbottle_scene.instantiate()
+		waterbottle.set_speed(speed)
+		add_child(waterbottle)
+		waterbottle.position = Vector2(640 + 32, randf_range(60, 320 - 50))
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	game_over.show()
@@ -90,7 +109,6 @@ func _on_first_play_help_text_close_help_text() -> void:
 func _on_levels_pause_menu_reload_pressed() -> void:
 	tree.change_scene_to_file("res://levels/river/river_level_1.tscn")
 
-
 func _on_start_timer_timeout() -> void:
 	start_timer_label.text = str(count)
 	if count <= 0:
@@ -100,6 +118,3 @@ func _on_start_timer_timeout() -> void:
 		start_count.hide()
 		return
 	count -= 1
-	
-	
-	
