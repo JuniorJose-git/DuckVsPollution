@@ -34,7 +34,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$ParallaxBackground.scroll_offset = Vector2(0, 0)
-	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-0.425 * speed, 0)
+	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-1 * speed, 0)
 	
 	if player.coins >= 10:
 		game_completed.show()
@@ -94,7 +94,7 @@ func _on_game_over_exit_pressed() -> void:
 	tree.paused = false
 
 func _on_speed_timer_timeout() -> void:
-	if speed <= 4: speed += 0.1
+	if speed <= 3: speed += 0.1
 
 func _on_game_completed_continue_pressed() -> void:
 	tree.change_scene_to_file("res://main/game.tscn")

@@ -1,12 +1,19 @@
-[gd_scene load_steps=21 format=4 uid="uid://bu5hnkmqdn61a"]
+[gd_scene load_steps=30 format=4 uid="uid://bu5hnkmqdn61a"]
 
+[ext_resource type="Script" uid="uid://d2tb50o2yphpk" path="res://scripts/levels/river/river_level_2.gd" id="1_5k3f0"]
 [ext_resource type="Texture2D" uid="uid://b06suqy6333l7" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="1_b3h66"]
+[ext_resource type="PackedScene" uid="uid://bt872fgkvgsj5" path="res://levels/river/castanha_river.tscn" id="2_boto8"]
 [ext_resource type="Texture2D" uid="uid://rmfeln1whg1c" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="2_fmkog"]
+[ext_resource type="PackedScene" uid="uid://dqdamp5wmbqxo" path="res://levels/river/lata_river.tscn" id="3_b2wpo"]
 [ext_resource type="Texture2D" uid="uid://cycbg2p30lqmu" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="3_hq62u"]
+[ext_resource type="PackedScene" uid="uid://dn1355bf5vrr3" path="res://levels/river/waterbottle.tscn" id="4_o0mu2"]
 [ext_resource type="Texture2D" uid="uid://c85hho28wspqc" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="4_op4kh"]
 [ext_resource type="Texture2D" uid="uid://bjaok1bqtq4bg" path="res://assets/tonel-toxico/tonel_toxico_boiando.png" id="5_gp8yt"]
 [ext_resource type="Texture2D" uid="uid://4v4fisvl31cm" path="res://assets/garbage/lixo_2.png" id="6_5k3f0"]
 [ext_resource type="PackedScene" uid="uid://drvpay50cuaad" path="res://actors/player_river.tscn" id="7_fmkog"]
+[ext_resource type="FontFile" uid="uid://ddmipjgckb4xp" path="res://assets/ui/font/ChiKareGo2.ttf" id="8_op4kh"]
+[ext_resource type="Texture2D" uid="uid://cowr8ue3mavnn" path="res://assets/ui/borda.png" id="9_gp8yt"]
+[ext_resource type="PackedScene" uid="uid://bj74g0xpuejid" path="res://ui/levels_pause_menu.tscn" id="10_gp8yt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijfdu"]
 texture = ExtResource("1_b3h66")
@@ -330,7 +337,24 @@ size = Vector2(75, 392)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmkog"]
 size = Vector2(70, 411)
 
+[sub_resource type="LabelSettings" id="LabelSettings_5k3f0"]
+font = ExtResource("8_op4kh")
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijfdu"]
+texture = ExtResource("9_gp8yt")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
 [node name="RiverLevel2" type="Node2D"]
+script = ExtResource("1_5k3f0")
+coin_scene = ExtResource("2_boto8")
+can_scene = ExtResource("3_b2wpo")
+waterbottle_scene = ExtResource("4_o0mu2")
 
 [node name="PlayerRiver" parent="." instance=ExtResource("7_fmkog")]
 unique_name_in_owner = true
@@ -381,3 +405,144 @@ shape = SubResource("RectangleShape2D_fmkog")
 
 [node name="SpeedTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+
+[node name="Control" type="Control" parent="GameOver"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameOver/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game over"
+label_settings = SubResource("LabelSettings_5k3f0")
+
+[node name="GameOverPlayAgain" type="Button" parent="GameOver/Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Jogar novamente"
+
+[node name="GameOverExit" type="Button" parent="GameOver/Control/VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[node name="GameCompleted" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+
+[node name="Control" type="Control" parent="GameCompleted"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GameCompleted/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -27.5
+offset_right = 101.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameCompleted/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameCompleted/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Nível Completo"
+label_settings = SubResource("LabelSettings_5k3f0")
+
+[node name="Separador" type="Panel" parent="GameCompleted/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ijfdu")
+
+[node name="GameCompletedContinue" type="Button" parent="GameCompleted/Control/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continuar"
+
+[node name="StartCount" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="StartTimer" type="Timer" parent="StartCount"]
+unique_name_in_owner = true
+process_mode = 3
+wait_time = 0.872
+
+[node name="Control" type="Control" parent="StartCount"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.31
+anchor_right = 0.5
+anchor_bottom = 0.31
+offset_left = -20.0
+offset_top = -18.2
+offset_right = 20.0
+offset_bottom = 21.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="StartCount/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.5
+offset_right = 2.5
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("8_op4kh")
+theme_override_font_sizes/font_size = 20
+
+[node name="LevelsPauseMenu" parent="." instance=ExtResource("10_gp8yt")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="GameOver/Control/VBoxContainer/GameOverPlayAgain" to="." method="_on_game_over_play_again_pressed"]
+[connection signal="pressed" from="GameOver/Control/VBoxContainer/GameOverExit" to="." method="_on_game_over_exit_pressed"]
+[connection signal="timeout" from="StartCount/StartTimer" to="." method="_on_start_timer_timeout"]

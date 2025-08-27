@@ -406,7 +406,6 @@ position = Vector2(676, 177.5)
 shape = SubResource("RectangleShape2D_5urue")
 
 [node name="SpeedTimer" type="Timer" parent="."]
-wait_time = 2.4
 autostart = true
 
 [node name="CoinsTimer" type="Timer" parent="."]
