@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var label_cans = $Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/cans
 @onready var label_waterbottles = $Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/water
 @onready var healthBar = %HealthBar
+@onready var animation = %AnimatedSprite2D
+
 var speed := 75
 var coins := 0
 var cans := 0
@@ -32,3 +34,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if health > 0:
 		health -= 1
 	healthBar.value = health
+	animation.play('damage')
+	await get_tree().create_timer(0.5).timeout
+	animation.play('run')

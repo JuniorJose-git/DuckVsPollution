@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://hvgrshhj0js2" path="res://ui/level_select_menu.tscn" id="10_j015t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j015t"]
-size = Vector2(62.5, 58)
+size = Vector2(62.5, 57)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlcqn"]
 texture = ExtResource("9_4u4fy")
@@ -71,7 +71,7 @@ scale = Vector2(-1, 1)
 position = Vector2(443, 847)
 
 [node name="Tico" parent="." instance=ExtResource("5_v3ojx")]
-position = Vector2(264, 812)
+position = Vector2(158, 565)
 
 [node name="Querico" parent="." instance=ExtResource("6_f7m14")]
 position = Vector2(280, 907)
@@ -83,15 +83,17 @@ position = Vector2(456, 818)
 [node name="PauseMenu" parent="." instance=ExtResource("8_0coyo")]
 
 [node name="RiversLevelArea" type="Area2D" parent="."]
+process_mode = 3
 collision_layer = 2
 collision_mask = 16
 script = ExtResource("10_hlcqn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiversLevelArea"]
-position = Vector2(688, 916)
+position = Vector2(266, 519)
 shape = SubResource("RectangleShape2D_j015t")
 
 [node name="LevelSelectMenu" parent="RiversLevelArea" instance=ExtResource("10_j015t")]
+visible = false
 
 [node name="tree" type="TileMapLayer" parent="."]
 light_mask = 0

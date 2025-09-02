@@ -113,7 +113,7 @@ func _on_first_play_help_text_close_help_text() -> void:
 func _on_timer_timeout() -> void:
 	progress+= 1
 	progress_bar.value = progress
-	if progress >= 10:
+	if progress >= 120:
 		game_completed.show()
 		%GameCompletedContinue.grab_focus()
 		LevelCore.levels_pause_avaliable = false
