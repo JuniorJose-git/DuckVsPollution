@@ -66,11 +66,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3s7jk"]
-radius = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jriy2"]
+size = Vector2(20, 9)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ek1fv"]
-radius = 11.0454
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj7ed"]
+size = Vector2(23, 11)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbyap"]
 
@@ -218,14 +218,16 @@ autoplay = "run"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_3s7jk")
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_jriy2")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_ek1fv")
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_nj7ed")
 
 [node name="Stats" type="CanvasLayer" parent="."]
 

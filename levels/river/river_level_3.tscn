@@ -309,21 +309,21 @@ texture = ExtResource("8_catr2")
 0:0/animation_frame_2/duration = 1.0
 0:0/animation_frame_3/duration = 1.0
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.01945, -8, 4.91384, -8, 5.03668, 5.65091, -5.8966, 5.77376)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euhxv"]
 texture = ExtResource("9_r58yw")
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.50724, -11.9606, -2.06837, -16.0974, 2.24823, -15.7376, 1.34894, -11.7807, 6.02527, -9.44258, 8, -0.449646, -6.02527, -0.629505, -6.56484, -9.8023)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18v8e"]
 texture = ExtResource("4_e2dls")
 12:0/0 = 0
-12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.39576, -4.5864, -8, 4.22668, -8, 8, -4.85619, 8, 4.67633, 5.99924, 6.88024, -5.99924, 6.88024, -8, 4.6987)
 26:0/size_in_atlas = Vector2i(2, 1)
 26:0/0 = 0
-26:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -8, 16, -8, 16, 8, -16, 8)
+26:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9001, -3.85965, -14.4737, -5.53776, -12.2921, -6.88024, -9.85889, -7.88711, 11.7887, -7.8032, 13.8024, -6.71243, 15.984, -5.20214, 16.0679, 2.01373, 14.4737, 3.52403, 12.7956, 5.20214, 10.5301, 6.96415, -9.77498, 6.62853, -12.6278, 4.78261, -14.4737, 2.85279, -15.984, 1.00687)
 
 [sub_resource type="TileSet" id="TileSet_kml2d"]
 physics_layer_0/collision_layer = 129
@@ -388,6 +388,7 @@ collision_enabled = false
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAXAAcAAQAAAAAAAAAPAAYAAQAAAAAAAAAmAAYAAQAAAAAAAAArAAMAAQAAAAAAAAAsAA8AAQAAAAAAAAA2ABEAAQAAAAAAAAA5AAgAAQAAAAAAAAAfABEAAQAAAAAAAAAKABEAAQAAAAAAAAAFAAYAAQAAAAAAAAAGAA8AAQAAAAAAAABBAA4AAQAAAAAAAABAABEAAQAAAAAAAAA6AA4AAQAAAAAAAABBAAYAAQAAAAAAAAA9AAsAAQAAAAAAAAAvABAAAQAAAAAAAAA6AAQAAQAAAAAAAAAUABMAAQAAAAAAAAAnABMAAQAAAAAAAAAiABQAAQAAAAAAAAAFABMAAQAAAAAAAAAQABIAAwAMAAAAAAAYAA0AAAAAAAAAAAAdAAoAAAAAAAAAAAAcAA8AAAAAAAAAAAARAA4AAAAAAAAAAAAVABEAAAAAAAAAAAAiAA8AAAAAAAAAAAAiAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAALAAsAAAAAAAAAAAAEAAkAAAAAAAAAAAAJAAUAAAAAAAAAAAACABAAAAAAAAAAAAANAA8AAAAAAAAAAAATAAQAAAAAAAAAAAAwAA0AAAAAAAAAAAAnAA8AAAAAAAAAAAApAAgAAAAAAAAAAAA2AAQAAAAAAAAAAAA1AAsAAAAAAAAAAAAzABEAAAAAAAAAAAA7ABEAAAAAAAAAAAA9AAUAAAAAAAAAAAA0AAcAAAAAAAAAAABDAAkAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_kml2d")
+collision_visibility_mode = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 24
