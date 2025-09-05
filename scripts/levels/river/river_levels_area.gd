@@ -21,3 +21,7 @@ func _physics_process(delta: float) -> void:
 				level_select_menu.button_level_1.grab_focus()
 		if Input.is_action_just_pressed("escape") && level_select_menu.visible:
 			level_select_menu.hide()
+
+
+func _on_level_select_menu_level_selected() -> void:
+	LevelCore.player_position = get_parent().get_node("player").global_position

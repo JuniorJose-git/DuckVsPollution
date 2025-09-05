@@ -252,6 +252,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_fbyap")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer/Panel"]
+process_mode = 3
 position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_nj7ed")
 autoplay = "default"

@@ -3,10 +3,17 @@ extends CharacterBody2D
 
 const SPEED = 75
 @onready var animation := $AnimationPlayer 
+@onready var coins_label := %coins
+@onready var cans_label := %cans
+@onready var water_label : = %water
+
 var lastDirection = 'left'
 
 func _ready() -> void:
 	LevelCore.river.level_1_first_play = true
+	if LevelCore.player_position:
+		$".".global_position = LevelCore.player_position
+	
 
 func updateAnimation(): 
 	var direction
@@ -37,6 +44,11 @@ func updateAnimation():
 	animation.play(direction)
 	
 func _physics_process(delta: float) -> void:
+	
+	coins_label.text = str(LevelCore.coins)
+	cans_label.text = str(LevelCore.cans)
+	water_label.text = str(LevelCore.waterbottles)
+	
 	var direction = Input.get_vector("ui_left", "ui_right","ui_up","ui_down")
 	velocity = direction * SPEED
 

@@ -20,7 +20,7 @@ func start():
 		return
 	dialogue_active = true
 	textbox.show()
-	
+	%Button.grab_focus()
 	dialogue = load_dialogue()
 	current_dialogue_id = -1
 	next_script()
@@ -37,12 +37,11 @@ func next_script():
 	text.text = dialogue[current_dialogue_id]['text']
 	button.text = dialogue[current_dialogue_id]['button']
 	
-func _input(event: InputEvent) -> void:
-	if not dialogue_active:
-		return
-	if event.is_action_pressed("ui_accept"):
-		next_script()
-
+#func _input(event: InputEvent) -> void:
+	#if not dialogue_active:
+		#return
+	#if event.is_action_pressed("ui_accept"):
+		#next_script()
 
 func _on_button_pressed() -> void:
 	if not dialogue_active:

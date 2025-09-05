@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$ParallaxBackground.scroll_offset = Vector2(0, 0)
-	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-0.475 * speed, 0)
+	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-0.7 * speed, 0)
 	
 	if player.health <= 0:
 		game_over.show()
@@ -65,3 +65,10 @@ func _on_boss_river_boss_died() -> void:
 	%GameCompletedContinue.grab_focus()
 	LevelCore.levels_pause_avaliable = false
 	tree.paused = true
+
+func _on_speed_timer_timeout() -> void:
+	if speed <= 3: speed += 0.1
+
+
+func _on_levels_pause_menu_reload_pressed() -> void:
+	tree.change_scene_to_file("res://levels/river/river_level_3.tscn")

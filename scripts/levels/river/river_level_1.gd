@@ -34,7 +34,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$ParallaxBackground.scroll_offset = Vector2(0, 0)
-	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-0.475 * speed, 0)
+	$ParallaxBackground/ParallaxLayer.motion_offset += Vector2(-0.7 * speed, 0)
 	
 	if player.coins >= 10:
 		game_completed.show()
@@ -87,6 +87,10 @@ func _on_game_completed_continue_pressed() -> void:
 	tree.change_scene_to_file("res://main/game.tscn")
 	LevelCore.river.level_1_completed = true
 	tree.paused = false
+	
+	LevelCore.cans += player.cans
+	LevelCore.coins += player.coins
+	LevelCore.waterbottles += player.waterbottles
 
 func _on_first_play_help_text_close_help_text() -> void:
 	start_timer_label.text = str(count)

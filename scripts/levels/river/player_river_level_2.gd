@@ -25,5 +25,5 @@ func _physics_process(delta: float) -> void:
 		bullet.direction = Vector2(1, 0) 
 		get_parent().add_child(bullet)
 		is_cooldown = true
-		await get_tree().create_timer(0.123).timeout
+		await get_tree().create_timer(0.5 - (0.5 * (LevelCore.bullet_fire_rate_bonus - 1))).timeout
 		is_cooldown = false

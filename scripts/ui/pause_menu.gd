@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 func pause():
 	pauseMenu.show()
+	%resume.grab_focus()
 	tree.paused = true
 
 func resume():
@@ -25,7 +26,13 @@ func testEsc():
 		resume()
 
 func _on_exit_pressed() -> void:
+	LevelCore.save_data()
 	tree.quit()
 
 func _on_resume_pressed() -> void:
 	resume()
+
+
+func _on_quit_pressed() -> void:
+	tree.quit()
+	

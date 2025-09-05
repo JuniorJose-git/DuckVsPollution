@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://levt3h2pqff0"
-path="res://.godot/imported/03.png-18b42083f5f9b4d617ad89875d9be620.ctex"
+uid="uid://p505pevdq8gw"
+path="res://.godot/imported/medieval-select.png-062e9e81f495a0fa210ae53a5a9a4f0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/extern/Sign Posts/03.png"
-dest_files=["res://.godot/imported/03.png-18b42083f5f9b4d617ad89875d9be620.ctex"]
+source_file="res://assets/extern/Mediavel/medieval-select.png"
+dest_files=["res://.godot/imported/medieval-select.png-062e9e81f495a0fa210ae53a5a9a4f0c.ctex"]
 
 [params]
 

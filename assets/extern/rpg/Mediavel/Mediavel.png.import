@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0rbxrnsn4bol"
-path="res://.godot/imported/01.png-d1439ef7609fa1f341cc698491aa2dcf.ctex"
+uid="uid://ddnu2fxfva2yf"
+path="res://.godot/imported/Mediavel.png-fc723c9606ec8aebe158d29ab9cb1120.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/extern/Sign Posts/01.png"
-dest_files=["res://.godot/imported/01.png-d1439ef7609fa1f341cc698491aa2dcf.ctex"]
+source_file="res://assets/extern/rpg/Mediavel/Mediavel.png"
+dest_files=["res://.godot/imported/Mediavel.png-fc723c9606ec8aebe158d29ab9cb1120.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cowwppnha8qr2"
-path="res://.godot/imported/04.png-c5d9b532aa814132f66ff210150b16da.ctex"
+uid="uid://deffqvs27a7kw"
+path="res://.godot/imported/guaxinim.png-53cc8173984dbf1bc7ed24ec40e762e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/extern/Sign Posts/04.png"
-dest_files=["res://.godot/imported/04.png-c5d9b532aa814132f66ff210150b16da.ctex"]
+source_file="res://assets/actors/guaxinim/guaxinim.png"
+dest_files=["res://.godot/imported/guaxinim.png-53cc8173984dbf1bc7ed24ec40e762e2.ctex"]
 
 [params]
 

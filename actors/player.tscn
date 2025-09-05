@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bdm40imtxq7on" path="res://assets/lata/lata.png" id="8_ua707"]
 [ext_resource type="Texture2D" uid="uid://d1x0i1pj4g3g5" path="res://assets/garrafa-agua/garrafa_agua.png" id="9_ua707"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_esgq3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua707"]
+size = Vector2(20, 14)
 
 [sub_resource type="Animation" id="Animation_tue77"]
 length = 0.001
@@ -177,8 +178,8 @@ _data = {
 &"up": SubResource("Animation_mvpqy")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mvpqy"]
-radius = 10.0499
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkwqa"]
+size = Vector2(20, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ua707"]
 
@@ -311,7 +312,8 @@ collision_mask = 2
 script = ExtResource("4_esgq3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_esgq3")
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_ua707")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
@@ -328,7 +330,8 @@ hframes = 6
 vframes = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_mvpqy")
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_rkwqa")
 
 [node name="HelpTextbox" parent="." instance=ExtResource("3_1yqc4")]
 
@@ -355,6 +358,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ua707")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/Control/MarginContainer/HBoxContainer/Panel"]
+process_mode = 3
 position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_rkwqa")
 autoplay = "default"
@@ -395,6 +399,7 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_31m4k")
 
 [node name="cans" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_31m4k")
@@ -410,6 +415,7 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_opp7g")
 
 [node name="water" type="Label" parent="Stats/Control/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_31m4k")

@@ -3,7 +3,7 @@ extends Area2D
 var shooter: Node # who is the shooter of this bullet, so we increase its score
 
 var direction: Vector2 # in which direction should bullet move
-var speed: float = 512
+var speed: float = 512 * LevelCore.bullet_speed_bonus
 
 func _process(delta):
 	position += direction * speed * delta

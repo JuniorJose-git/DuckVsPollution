@@ -11,11 +11,12 @@ var cans := 0
 var waterbottles := 0
 var health := 5
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if LevelCore.life_bonus > 0:
+		health += LevelCore.life_bonus
+		healthBar.max_value = health
+		healthBar.value = health
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	label_coins.text = str(coins)
 	label_cans.text = str(cans)
@@ -28,7 +29,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = direction * speed
 	move_and_slide()
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if health > 0:

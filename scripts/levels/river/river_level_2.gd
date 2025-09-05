@@ -62,6 +62,10 @@ func _on_game_completed_continue_pressed() -> void:
 	tree.change_scene_to_file("res://main/game.tscn")
 	LevelCore.river.level_2_completed = true
 	tree.paused = false
+	
+	LevelCore.cans += player.cans
+	LevelCore.coins += player.coins
+	LevelCore.waterbottles += player.waterbottles
 
 func _on_coins_timer_timeout() -> void:
 	var coin = coin_scene.instantiate()
@@ -113,7 +117,7 @@ func _on_first_play_help_text_close_help_text() -> void:
 func _on_timer_timeout() -> void:
 	progress+= 1
 	progress_bar.value = progress
-	if progress >= 120:
+	if progress >= 60:
 		game_completed.show()
 		%GameCompletedContinue.grab_focus()
 		LevelCore.levels_pause_avaliable = false
