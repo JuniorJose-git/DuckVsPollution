@@ -86,3 +86,7 @@ func _on_levels_pause_menu_reload_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	%EnemySpawnTimer2.start()
+
+
+func _on_game_completed_continue_pressed() -> void:
+	get_tree().change_scene_to_file("res://ui/ending_scene.tscn")

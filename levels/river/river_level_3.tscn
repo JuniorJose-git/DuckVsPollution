@@ -601,6 +601,7 @@ bus = &"Efects"
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GameOver/Control/VBoxContainer/GameOverPlayAgain" to="." method="_on_game_over_play_again_pressed"]
 [connection signal="pressed" from="GameOver/Control/VBoxContainer/GameOverExit" to="." method="_on_game_over_exit_pressed"]
+[connection signal="pressed" from="GameCompleted/Control/MarginContainer/VBoxContainer/GameCompletedContinue" to="." method="_on_game_completed_continue_pressed"]
 [connection signal="timeout" from="StartCount/StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
