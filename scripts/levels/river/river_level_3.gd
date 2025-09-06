@@ -1,6 +1,8 @@
 extends Node2D
 var speed = 1;
 @export var enemy_scene: PackedScene
+@export var enemy_scene_2: PackedScene
+
 @onready var tree = get_tree()
 @onready var game_over = $GameOver
 @onready var player = %PlayerRiver
@@ -27,12 +29,18 @@ func _process(delta: float) -> void:
 	
 	if player.health <= 0:
 		game_over.show()
+		%GamerOverSound.play()
 		%GameOverPlayAgain.grab_focus()
 		LevelCore.levels_pause_avaliable = false
 		tree.paused = true
 
 func _on_enemy_spawn_timer_timeout():
 	var enemy = enemy_scene.instantiate()
+	add_child(enemy)
+	enemy.position = Vector2(640 + 32, randf_range(60, 320 - 50))
+	
+func _on_enemy_spawn_timer_2_timeout() -> void:
+	var enemy = enemy_scene_2.instantiate()
 	add_child(enemy)
 	enemy.position = Vector2(640 + 32, randf_range(60, 320 - 50))
 
@@ -51,11 +59,13 @@ func _on_start_timer_timeout() -> void:
 		start_timer.stop()
 		tree.paused = false
 		start_count.hide()
+		await tree.create_timer(0.5).timeout
 		return
 	count -= 1
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	game_over.show()
+	%GamerOverSound.play()
 	%GameOverPlayAgain.grab_focus()
 	LevelCore.levels_pause_avaliable = false
 	tree.paused = true
@@ -72,3 +82,7 @@ func _on_speed_timer_timeout() -> void:
 
 func _on_levels_pause_menu_reload_pressed() -> void:
 	tree.change_scene_to_file("res://levels/river/river_level_3.tscn")
+
+
+func _on_timer_timeout() -> void:
+	%EnemySpawnTimer2.start()

@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 	
 	if player.health <= 0:
 		game_over.show()
+		%GamerOverSound.play()
 		%GameOverPlayAgain.grab_focus()
 		LevelCore.levels_pause_avaliable = false
 		tree.paused = true
@@ -68,6 +69,7 @@ func _on_water_timer_timeout() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	game_over.show()
+	%GamerOverSound.play()
 	%GameOverPlayAgain.grab_focus()
 	LevelCore.levels_pause_avaliable = false
 	tree.paused = true

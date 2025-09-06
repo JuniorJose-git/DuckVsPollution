@@ -1,10 +1,6 @@
 extends CanvasLayer
-@onready var pauseMenu: Control = $"Control"
+@onready var pauseMenu := $"."
 @onready var tree: SceneTree = get_tree()
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -13,7 +9,11 @@ func _process(delta: float) -> void:
 func pause():
 	pauseMenu.show()
 	%resume.grab_focus()
+	if %Settings.visible:
+		%Settings.hide()
+		$Control.show()
 	tree.paused = true
+
 
 func resume():
 	pauseMenu.hide()
@@ -32,7 +32,18 @@ func _on_exit_pressed() -> void:
 func _on_resume_pressed() -> void:
 	resume()
 
-
 func _on_quit_pressed() -> void:
 	tree.quit()
-	
+
+func _on_settings_pressed() -> void:
+	%VolumeSlider.grab_focus()
+	%Settings.show()
+	$Control.hide()
+func _on_exit_settings_pressed() -> void:
+	%resume.grab_focus()
+	%Settings.hide()
+	$Control.show()
+
+
+func _on_volume_slider_value_changed(value: float) -> void:
+	%Quack.play()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=4 uid="uid://dac7hhr6fldpb"]
+[gd_scene load_steps=36 format=4 uid="uid://dac7hhr6fldpb"]
 
 [ext_resource type="Script" uid="uid://y4mpj0jvh1d5" path="res://scripts/levels/river/river_level_3.gd" id="1_e2dls"]
 [ext_resource type="PackedScene" uid="uid://drvpay50cuaad" path="res://actors/player_river.tscn" id="1_o17pd"]
 [ext_resource type="Script" uid="uid://cfmf45nggsyj6" path="res://scripts/levels/river/player_river_level_3.gd" id="2_o17pd"]
 [ext_resource type="PackedScene" uid="uid://cru41ld8ms7rb" path="res://actors/enemy_river.tscn" id="2_xp5j2"]
+[ext_resource type="PackedScene" uid="uid://dgcudx4s31mwb" path="res://actors/enemy_river_2.tscn" id="3_catr2"]
 [ext_resource type="PackedScene" uid="uid://b7nfh3deim0hc" path="res://levels/river/bullet.tscn" id="3_i0t3s"]
 [ext_resource type="Texture2D" uid="uid://b06suqy6333l7" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="4_e2dls"]
 [ext_resource type="Texture2D" uid="uid://rmfeln1whg1c" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="5_xp5j2"]
@@ -15,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://2a6mpj6yr1sj" path="res://actors/boss_river.tscn" id="11_i0t3s"]
 [ext_resource type="FontFile" uid="uid://ddmipjgckb4xp" path="res://assets/ui/font/ChiKareGo2.ttf" id="14_vj1wl"]
 [ext_resource type="Texture2D" uid="uid://cowr8ue3mavnn" path="res://assets/ui/borda.png" id="15_catr2"]
+[ext_resource type="AudioStream" uid="uid://diyer5tgigj0s" path="res://assets/sounds/tiro1.ogg" id="17_r58yw"]
+[ext_resource type="AudioStream" uid="uid://b8q40vcpvyk6n" path="res://assets/sounds/game-over/gameover.ogg" id="18_te1fa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_te1fa"]
 texture = ExtResource("4_e2dls")
@@ -360,6 +363,7 @@ size = Vector2(721, 20)
 [node name="RiverLevel3" type="Node2D"]
 script = ExtResource("1_e2dls")
 enemy_scene = ExtResource("2_xp5j2")
+enemy_scene_2 = ExtResource("3_catr2")
 
 [node name="PlayerRiver" parent="." instance=ExtResource("1_o17pd")]
 unique_name_in_owner = true
@@ -415,8 +419,10 @@ shape = SubResource("RectangleShape2D_jvhiu")
 [node name="BossRiver" parent="." instance=ExtResource("11_i0t3s")]
 position = Vector2(575, 175)
 
+[node name="EnemySpawnTimer2" type="Timer" parent="."]
+unique_name_in_owner = true
+
 [node name="EnemySpawnTimer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="."]
@@ -465,6 +471,11 @@ text = "Jogar novamente"
 [node name="GameOverExit" type="Button" parent="GameOver/Control/VBoxContainer"]
 layout_mode = 2
 text = "Sair"
+
+[node name="GamerOverSound" type="AudioStreamPlayer2D" parent="GameOver"]
+unique_name_in_owner = true
+stream = ExtResource("18_te1fa")
+bus = &"Efects"
 
 [node name="GameCompleted" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -573,11 +584,23 @@ collision_mask = 512
 position = Vector2(272.5, 0)
 shape = SubResource("RectangleShape2D_catr2")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="tiro" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("17_r58yw")
+bus = &"Efects"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="reload_pressed" from="LevelsPauseMenu" to="." method="_on_levels_pause_menu_reload_pressed"]
 [connection signal="boss_died" from="BossRiver" to="." method="_on_boss_river_boss_died"]
+[connection signal="timeout" from="EnemySpawnTimer2" to="." method="_on_enemy_spawn_timer_2_timeout"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GameOver/Control/VBoxContainer/GameOverPlayAgain" to="." method="_on_game_over_play_again_pressed"]
 [connection signal="pressed" from="GameOver/Control/VBoxContainer/GameOverExit" to="." method="_on_game_over_exit_pressed"]
 [connection signal="timeout" from="StartCount/StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bjhgrku6molgv"]
+[gd_scene load_steps=32 format=4 uid="uid://bjhgrku6molgv"]
 
 [ext_resource type="Texture2D" uid="uid://b06suqy6333l7" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="1_73gwi"]
 [ext_resource type="Script" uid="uid://beuq77voy43kw" path="res://scripts/levels/river/river_level_1.gd" id="1_qny2x"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cowr8ue3mavnn" path="res://assets/ui/borda.png" id="11_fd31t"]
 [ext_resource type="PackedScene" uid="uid://nhibawutks6e" path="res://ui/first_play_help_text.tscn" id="12_fd31t"]
 [ext_resource type="PackedScene" uid="uid://bj74g0xpuejid" path="res://ui/levels_pause_menu.tscn" id="13_86sy8"]
+[ext_resource type="AudioStream" uid="uid://b8q40vcpvyk6n" path="res://assets/sounds/game-over/gameover.ogg" id="13_fawlq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86sy8"]
 texture = ExtResource("1_73gwi")
@@ -466,6 +467,11 @@ text = "Jogar novamente"
 [node name="GameOverExit" type="Button" parent="GameOver/Control/VBoxContainer"]
 layout_mode = 2
 text = "Sair"
+
+[node name="GamerOverSound" type="AudioStreamPlayer2D" parent="GameOver"]
+unique_name_in_owner = true
+stream = ExtResource("13_fawlq")
+bus = &"Efects"
 
 [node name="GameCompleted" type="CanvasLayer" parent="."]
 process_mode = 3

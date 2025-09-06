@@ -26,7 +26,24 @@ func test_esc():
 	if Input.is_action_just_pressed("escape") and tree.paused == false and LevelCore.levels_pause_avaliable:
 		pause_menu.show()
 		resume.grab_focus()
+		%Settings.hide()
+		%Control.show()
 		tree.paused = true
 	elif Input.is_action_just_pressed("escape") and tree.paused == true and LevelCore.levels_pause_avaliable:
 		pause_menu.hide()
 		tree.paused = false
+
+
+func _on_settings_pressed() -> void:
+	%Settings.show()
+	%VolumeSlider.grab_focus()
+	%Control.hide()
+
+
+func _on_exit_settings_pressed() -> void:
+	%Settings.hide()
+	resume.grab_focus()
+	%Control.show()
+
+func _on_volume_slider_value_changed(value: float) -> void:
+	%Quack.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bu5hnkmqdn61a"]
+[gd_scene load_steps=40 format=4 uid="uid://bu5hnkmqdn61a"]
 
 [ext_resource type="Script" uid="uid://d2tb50o2yphpk" path="res://scripts/levels/river/river_level_2.gd" id="1_5k3f0"]
 [ext_resource type="Texture2D" uid="uid://b06suqy6333l7" path="res://assets/extern/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="1_b3h66"]
@@ -17,9 +17,11 @@
 [ext_resource type="FontFile" uid="uid://ddmipjgckb4xp" path="res://assets/ui/font/ChiKareGo2.ttf" id="8_op4kh"]
 [ext_resource type="Texture2D" uid="uid://cowr8ue3mavnn" path="res://assets/ui/borda.png" id="9_gp8yt"]
 [ext_resource type="PackedScene" uid="uid://bj74g0xpuejid" path="res://ui/levels_pause_menu.tscn" id="10_gp8yt"]
+[ext_resource type="AudioStream" uid="uid://b8q40vcpvyk6n" path="res://assets/sounds/game-over/gameover.ogg" id="16_sf8eb"]
 [ext_resource type="PackedScene" uid="uid://nhibawutks6e" path="res://ui/first_play_help_text.tscn" id="18_teux4"]
 [ext_resource type="Texture2D" uid="uid://5ptl2ii71sy2" path="res://assets/ui/borda-vida.png" id="19_x87i0"]
 [ext_resource type="Texture2D" uid="uid://dnhpma8d0yw8p" path="res://assets/ui/progress.png" id="20_x87i0"]
+[ext_resource type="AudioStream" uid="uid://diyer5tgigj0s" path="res://assets/sounds/tiro1.ogg" id="22_o5fb4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppuuh"]
 texture = ExtResource("1_b3h66")
@@ -474,6 +476,11 @@ text = "Jogar novamente"
 layout_mode = 2
 text = "Sair"
 
+[node name="GamerOverSound" type="AudioStreamPlayer2D" parent="GameOver"]
+unique_name_in_owner = true
+stream = ExtResource("16_sf8eb")
+bus = &"Efects"
+
 [node name="GameCompleted" type="CanvasLayer" parent="."]
 process_mode = 3
 visible = false
@@ -619,6 +626,11 @@ layout_mode = 2
 theme_override_styles/fill = SubResource("StyleBoxTexture_h081g")
 max_value = 60.0
 show_percentage = false
+
+[node name="tiro" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("22_o5fb4")
+bus = &"Efects"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]

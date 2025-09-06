@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://gbpm23vlrpar"]
+[gd_scene load_steps=9 format=3 uid="uid://gbpm23vlrpar"]
 
 [ext_resource type="Script" uid="uid://cx2yvehn3vu32" path="res://scripts/ui/settings.gd" id="1_3ykye"]
 [ext_resource type="Texture2D" uid="uid://bogqx3mems0th" path="res://assets/ui/background.png" id="1_x2hje"]
 [ext_resource type="Texture2D" uid="uid://d2hqmr8tshdwg" path="res://assets/ui/settings_background.png" id="2_nkug2"]
 [ext_resource type="FontFile" uid="uid://ddmipjgckb4xp" path="res://assets/ui/font/ChiKareGo2.ttf" id="4_yl6pr"]
+[ext_resource type="PackedScene" uid="uid://qctv6ksl33qc" path="res://ui/volume_slider.tscn" id="5_yl6pr"]
+[ext_resource type="AudioStream" uid="uid://dqpx6pnb66k03" path="res://assets/sounds/pato.ogg" id="6_evr87"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkug2"]
 texture = ExtResource("1_x2hje")
@@ -64,19 +66,42 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_yl6pr")
-text = "som"
+text = "musica"
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VolumeSlider" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("5_yl6pr")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+bus_name = "Musics"
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "controles"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_yl6pr")
+text = "efeitos"
+
+[node name="VolumeSlider" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("5_yl6pr")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bus_name = "Efects"
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "voltar"
 
+[node name="Quack" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_evr87")
+bus = &"Efects"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_return_pressed"]

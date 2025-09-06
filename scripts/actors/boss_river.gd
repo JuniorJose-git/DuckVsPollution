@@ -13,9 +13,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	match current_states:
 		boss_states.MOVEUP:
-			velocity = Vector2.UP * 10
+			velocity = Vector2.UP * 80
 		boss_states.MOVEDOWN:
-			velocity = Vector2.DOWN * 10
+			velocity = Vector2.DOWN * 80
 	
 	move_and_slide()
 
@@ -33,6 +33,7 @@ func randow_direction():
 func _on_bullet_area_area_entered(area: Area2D) -> void:
 	area.queue_free()
 	health -= 1
+	%Dano.play()
 	health_bar.value = health
 	if health <= 0:
 		emit_signal("boss_died")

@@ -13,7 +13,6 @@ func _ready() -> void:
 	LevelCore.river.level_1_first_play = true
 	if LevelCore.player_position:
 		$".".global_position = LevelCore.player_position
-	
 
 func updateAnimation(): 
 	var direction
@@ -42,7 +41,11 @@ func updateAnimation():
 		lastDirection = direction
 	
 	animation.play(direction)
-	
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		%Quack.play()
+
 func _physics_process(delta: float) -> void:
 	
 	coins_label.text = str(LevelCore.coins)

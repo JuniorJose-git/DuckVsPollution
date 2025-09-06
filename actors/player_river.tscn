@@ -1,15 +1,17 @@
-[gd_scene load_steps=41 format=3 uid="uid://drvpay50cuaad"]
+[gd_scene load_steps=44 format=3 uid="uid://drvpay50cuaad"]
 
 [ext_resource type="Script" uid="uid://og4aw48ekyod" path="res://scripts/actors/player_river.gd" id="1_3s7jk"]
 [ext_resource type="Texture2D" uid="uid://bw2jgtfjbd8up" path="res://assets/actors/ducky/ducky_nadando.png" id="2_3s7jk"]
 [ext_resource type="Texture2D" uid="uid://biehoe3aaofxt" path="res://assets/actors/ducky/ducky_nadando_dano.png" id="2_jriy2"]
 [ext_resource type="FontFile" uid="uid://ddmipjgckb4xp" path="res://assets/ui/font/ChiKareGo2.ttf" id="3_ct4wv"]
+[ext_resource type="Texture2D" uid="uid://be1mn88eaklnw" path="res://assets/actors/ducky/ducky_cuspindo1.png" id="4_nj7ed"]
 [ext_resource type="Texture2D" uid="uid://bfd6jo8abdlqa" path="res://assets/ui/quadro-pato.png" id="5_fbyap"]
 [ext_resource type="Texture2D" uid="uid://c05mfgi7mlphe" path="res://assets/castanha/castanha.png" id="6_ek1fv"]
 [ext_resource type="Texture2D" uid="uid://cowr8ue3mavnn" path="res://assets/ui/borda.png" id="6_qx8cs"]
 [ext_resource type="Texture2D" uid="uid://bdm40imtxq7on" path="res://assets/lata/lata.png" id="6_ujdn1"]
 [ext_resource type="Texture2D" uid="uid://d1x0i1pj4g3g5" path="res://assets/garrafa-agua/garrafa_agua.png" id="7_jriy2"]
 [ext_resource type="Texture2D" uid="uid://5ptl2ii71sy2" path="res://assets/ui/borda-vida.png" id="8_updx0"]
+[ext_resource type="AudioStream" uid="uid://bprt5ereo002s" path="res://assets/sounds/pato3Reverb.ogg" id="12_whcuh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lia5t"]
 atlas = ExtResource("2_jriy2")
@@ -34,6 +36,10 @@ region = Rect2(80, 0, 40, 40)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qx8cs"]
 atlas = ExtResource("2_3s7jk")
 region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdy1x"]
+atlas = ExtResource("4_nj7ed")
+region = Rect2(40, 0, 40, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqugh"]
 animations = [{
@@ -64,6 +70,14 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdy1x")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jriy2"]
@@ -213,7 +227,7 @@ script = ExtResource("1_3s7jk")
 unique_name_in_owner = true
 scale = Vector2(1.00347, 1.00929)
 sprite_frames = SubResource("SpriteFrames_gqugh")
-animation = &"run"
+animation = &"shooting"
 autoplay = "run"
 flip_h = true
 
@@ -338,5 +352,9 @@ layout_mode = 2
 max_value = 5.0
 value = 5.0
 show_percentage = false
+
+[node name="quack" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("12_whcuh")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

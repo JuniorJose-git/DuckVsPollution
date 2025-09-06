@@ -45,8 +45,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnued"]
 size = Vector2(28, 14)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3d4dj"]
-radius = 13.0384
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovevh"]
+size = Vector2(28, 14)
 
 [node name="EnemyRiver" type="RigidBody2D"]
 collision_layer = 130
@@ -77,6 +77,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-shape = SubResource("CircleShape2D_3d4dj")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ovevh")
 
 [connection signal="area_entered" from="BulletArea" to="." method="_on_bullet_area_area_entered"]

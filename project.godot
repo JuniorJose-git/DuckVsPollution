@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 [autoload]
 
 LevelCore="*res://scripts/levels/level_core.gd"
+MainMusic="*res://sounds/musics/main_music.tscn"
 
 [display]
 
